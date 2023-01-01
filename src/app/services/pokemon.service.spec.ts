@@ -19,7 +19,7 @@ describe('PokemonService', () => {
   });
 
   it('should call pokemon api', () => {
-    httpClientSpy.get.withArgs('pokemon?limit=30').and.returnValue(of({}));
+    httpClientSpy.get.withArgs('https://pokeapi.co/api/v2/pokemon?limit=30').and.returnValue(of({}));
     service.getNext().subscribe(value => {
       expect(value).not.toBeNull();
     })
